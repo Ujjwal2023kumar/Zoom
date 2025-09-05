@@ -1,76 +1,55 @@
-import React, { useContext, useState } from 'react'
-import withAuth from '../utils/withAuth'
-import { useNavigate } from 'react-router-dom'
-import "../App.css";
-import { Button, IconButton, TextField } from '@mui/material';
-import RestoreIcon from '@mui/icons-material/Restore';
+import React, { useContext, useState } from 'react';
+import withAuth from '../utils/withAuth';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 
 function HomeComponent() {
-
-
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const [meetingCode, setMeetingCode] = useState("");
+    const { addToUserHistory } = useContext(AuthContext);
 
-
-    const {addToUserHistory} = useContext(AuthContext);
-    let handleJoinVideoCall = async () => {
-        await addToUserHistory(meetingCode)
-        navigate(`/${meetingCode}`)
-    }
+    const handleJoinVideoCall = async (e) => {
+        e.preventDefault();
+        await addToUserHistory(meetingCode);
+        navigate(`/${meetingCode}`);
+    };
 
     return (
-        <>
-
-            <div className="navBar">
-
-                <div style={{ display: "flex", alignItems: "center" }}>
-
-                    <h2>Apna Video Call</h2>
-                </div>
-
-                <div style={{ display: "flex", alignItems: "center" }}>
-                    <IconButton onClick={
-                        () => {
-                            navigate("/history")
-                        }
-                    }>
-                        <RestoreIcon />
-                    </IconButton>
-                    <p>History</p>
-
-                    <Button onClick={() => {
-                        localStorage.removeItem("token")
-                        navigate("/auth")
+        <div className="container-fluid p-0">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light px-4">
+                <span className="navbar-brand h2">Video Call</span>
+                <div className="d-flex align-items-center ms-auto">
+                    <button className="btn btn-dark me-2" onClick={() => navigate('/history')}>
+                        <span className="me-1"><i className="bi bi-clock-history" /></span> History
+                    </button>
+                    <button className="btn btn-dark" onClick={() => {
+                        localStorage.removeItem('token');
+                        navigate('/auth');
                     }}>
                         Logout
-                    </Button>
+                    </button>
                 </div>
-
-
-            </div>
-
-
-            <div className="meetContainer">
-                <div className="leftPanel">
-                    <div>
-                        <h2>Providing Quality Video Call Just Like Quality Education</h2>
-
-                        <div style={{ display: 'flex', gap: "10px" }}>
-
-                            <TextField onChange={e => setMeetingCode(e.target.value)} id="outlined-basic" label="Meeting Code" variant="outlined" />
-                            <Button onClick={handleJoinVideoCall} variant='contained'>Join</Button>
-
-                        </div>
-                    </div>
+            </nav>
+            <div className="row justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
+                <div className="col-md-6 d-flex flex-column justify-content-center">
+                    <h2 className="mb-4">Providing Quality Video Call Just Like Quality Education</h2>
+                    <form className="d-flex" onSubmit={handleJoinVideoCall}>
+                        <input
+                            type="text"
+                            className="form-control me-2"
+                            placeholder="Meeting Code"
+                            value={meetingCode}
+                            onChange={e => setMeetingCode(e.target.value)}
+                            required
+                        />
+                        <button type="submit" className="btn btn-dark">Join</button>
+                    </form>
                 </div>
-                <div className='rightPanel'>
-                    <img srcSet='/logo3.png' alt="" />
+                <div className="col-md-4 d-flex justify-content-center">
+                    <img srcSet="/logo3.png" alt="Logo" style={{ maxWidth: '100%', height: 'auto' }} />
                 </div>
             </div>
-        </>
-    )
+        </div>
+    );
 }
-
-
-export default withAuth(HomeComponent)
+export default withAuth(HomeComponent);
