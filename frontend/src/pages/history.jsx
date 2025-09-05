@@ -1,23 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { AuthContext } from '../contexts/AuthContext'
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import Card from '@mui/material/Card';
-import Box from '@mui/material/Box';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import HomeIcon from '@mui/icons-material/Home';
 
-import { IconButton } from '@mui/material';
 export default function History() {
-
-
     const { getHistoryOfUser } = useContext(AuthContext);
-
-    const [meetings, setMeetings] = useState([])
-
-
+    const [meetings, setMeetings] = useState([]);
     const routeTo = useNavigate();
 
     useEffect(() => {
@@ -26,63 +13,42 @@ export default function History() {
                 const history = await getHistoryOfUser();
                 setMeetings(history);
             } catch {
-                // IMPLEMENT SNACKBAR
+                // Optionally show a Bootstrap alert for error
             }
-        }
-
+        };
         fetchHistory();
-    }, [])
+    }, [getHistoryOfUser]);
 
-    let formatDate = (dateString) => {
-
+    const formatDate = (dateString) => {
         const date = new Date(dateString);
-        const day = date.getDate().toString().padStart(2, "0");
-        const month = (date.getMonth() + 1).toString().padStart(2, "0")
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
         const year = date.getFullYear();
-
-        return `${day}/${month}/${year}`
-
-    }
+        return `${day}/${month}/${year}`;
+    };
 
     return (
-        <div>
-
-            <IconButton onClick={() => {
-                routeTo("/home")
-            }}>
-                <HomeIcon />
-            </IconButton >
-            {
-                (meetings.length !== 0) ? meetings.map((e, i) => {
-                    return (
-
-                        <>
-
-
-                            <Card key={i} variant="outlined">
-
-
-                                <CardContent>
-                                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                        Code: {e.meetingCode}
-                                    </Typography>
-
-                                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                        Date: {formatDate(e.date)}
-                                    </Typography>
-
-                                </CardContent>
-
-
-                            </Card>
-
-
-                        </>
-                    )
-                }) : <></>
-
-            }
-
+        <div className="container py-4">
+            <button className="btn btn-dark mb-3" onClick={() => routeTo('/home')}>
+                <i className="bi bi-house-door me-2" /> Home
+            </button>
+            <h3 className="mb-4">Meeting History</h3>
+            {meetings.length > 0 ? (
+                <div className="row">
+                    {meetings.map((e, i) => (
+                        <div className="col-md-6 mb-3" key={i}>
+                            <div className="card h-100">
+                                <div className="card-body">
+                                    <h5 className="card-title">Code: {e.meetingCode}</h5>
+                                    <p className="card-text">Date: {formatDate(e.date)}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div className="alert alert-info">No meeting history found.</div>
+            )}
         </div>
-    )
+    );
 }
