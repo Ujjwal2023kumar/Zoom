@@ -51,3 +51,11 @@ Zerodha/
 - **Frontend**: React, React Router, Bootstrap
 
 ---
+
+## SETUP & INSTALLATION
+
+### PREREQUISITES
+- Node.js (v18+ recommended)
+- npm
+- MongoDB (local or Atlas)
+
