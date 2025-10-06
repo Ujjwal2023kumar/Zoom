@@ -44,3 +44,10 @@ Zerodha/
 ```
 
 ---
+
+## TECH STACK
+- **Backend**: Node.js, Express, MongoDB, Mongoose, dotenv, passport (for future auth)
+- **Dashboard**: React, React Router, Axios, Material UI, Chart.js
+- **Frontend**: React, React Router, Bootstrap
+
+---
