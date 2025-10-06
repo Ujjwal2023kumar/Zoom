@@ -59,3 +59,8 @@ Zerodha/
 - npm
 - MongoDB (local or Atlas)
 
+### 1. CLONE THE REPOSITORY
+```bash
+git clone <repo-url>
+cd Zerodha
+```
