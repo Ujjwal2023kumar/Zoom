@@ -24,3 +24,23 @@ A full-stack clone of the Zerodha trading platform, featuring a backend API (Nod
 - **Responsive UI**: Modern, mobile-friendly design using Bootstrap and Material UI.
 
 ---
+## PROJECT STRUCTURE
+```
+Zerodha/
+  backend/         # Node.js/Express API server
+    model/         # Mongoose models
+    schema/        # Mongoose schemas
+    index.js       # Main server file
+    package.json   # Backend dependencies
+  dashboard/       # React user dashboard
+    src/components # Dashboard React components
+    src/data       # Sample data for watchlist, holdings, etc.
+    public/        # Static assets (logo, index.html)
+    package.json   # Dashboard dependencies
+  frontend/        # React marketing/landing site
+    src/landing    # Landing page, products, about, support, etc.
+    public/media   # Images and branding assets
+    package.json   # Frontend dependencies
+```
+
+---
