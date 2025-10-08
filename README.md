@@ -78,3 +78,10 @@ cd ../dashboard
 npm install
 npm start
 ```
+
+### 4. FRONTEND SETUP
+```bash
+cd ../frontend
+npm install
+npm start
+```
