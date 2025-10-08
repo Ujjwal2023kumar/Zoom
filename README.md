@@ -110,3 +110,14 @@ npm start
 - **Position**: `{ product, name, qty, avg, price, net, day, isLoss }`
 
 ---
+
+## FRONTEND & DASHBOARD
+
+### DASHBOARD FEATURES
+- **Watchlist**: Search and track stocks, quick buy/sell
+- **Holdings**: View all holdings, P&L, net change
+- **Positions**: Open positions, real-time updates
+- **Orders**: List of all orders placed
+- **Funds**: Margin, cash, and collateral overview
+- **Summary**: Portfolio summary and quick stats
+- **Apps**: Placeholder for integrations
