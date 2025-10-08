@@ -121,3 +121,12 @@ npm start
 - **Funds**: Margin, cash, and collateral overview
 - **Summary**: Portfolio summary and quick stats
 - **Apps**: Placeholder for integrations
+
+### LANDING FRONTEND
+- **Home**: Hero, stats, pricing, education, open account
+- **Products**: Kite, Console, Coin, Kite Connect API, Varsity
+- **About**: Company info, team
+- **Pricing**: Brokerage and account opening
+- **Support**: Help and ticketing
+
+---
