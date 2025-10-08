@@ -71,3 +71,10 @@ cd backend
 npm install
 npm start
 ```
+
+### 3. DASHBOARD SETUP
+```bash
+cd ../dashboard
+npm install
+npm start
+```
