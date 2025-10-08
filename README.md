@@ -64,3 +64,10 @@ Zerodha/
 git clone <repo-url>
 cd Zerodha
 ```
+
+### 2. BACKEND SETUP
+```bash
+cd backend
+npm install
+npm start
+```
