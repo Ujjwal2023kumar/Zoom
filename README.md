@@ -85,3 +85,12 @@ cd ../frontend
 npm install
 npm start
 ```
+
+---
+
+## ENVIRONMENT VARIABLES
+- **backend/.env**
+  - `DATABASE_URL` — MongoDB connection string (e.g., `mongodb://localhost:27017/zerodha`)
+  - `PORT` (optional) — Port for backend server (default: 8080)
+
+---
