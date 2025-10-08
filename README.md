@@ -103,3 +103,10 @@ npm start
 - `GET /allOrders` — List all orders
 - `POST /newOrder` — Place a new order
   - Body: `{ name, qty, price, mode }`
+
+#### DATA MODELS
+- **Holding**: `{ name, qty, avg, price, net, day }`
+- **Order**: `{ name, qty, price, mode }`
+- **Position**: `{ product, name, qty, avg, price, net, day, isLoss }`
+
+---
