@@ -94,3 +94,12 @@ npm start
   - `PORT` (optional) — Port for backend server (default: 8080)
 
 ---
+
+## BACKEND API
+
+### ENDPOINTS
+- `GET /allHoldings` — List all holdings
+- `GET /allPositions` — List all positions
+- `GET /allOrders` — List all orders
+- `POST /newOrder` — Place a new order
+  - Body: `{ name, qty, price, mode }`
