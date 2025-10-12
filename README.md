@@ -58,7 +58,7 @@ Zoom/
 ### 1. CLONE THE REPOSITORY
 ```bash
 git clone <repo-url>
-cd Zerodha
+cd Zoom
 ```
 
 ### 2. BACKEND SETUP
