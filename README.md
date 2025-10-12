@@ -23,7 +23,7 @@ A full-stack clone of the Zoom platform, featuring a backend API (Node.js/Expres
 ---
 ## PROJECT STRUCTURE
 ```
-Zerodha/
+Zoom/
   backend/         # Node.js/Express API server
     model/         # Mongoose models
     schema/        # Mongoose schemas
