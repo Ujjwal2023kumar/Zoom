@@ -68,14 +68,7 @@ npm install
 npm start
 ```
 
-### 3. DASHBOARD SETUP
-```bash
-cd ../dashboard
-npm install
-npm start
-```
-
-### 4. FRONTEND SETUP
+### 3. FRONTEND SETUP
 ```bash
 cd ../frontend
 npm install
