@@ -44,7 +44,7 @@ Zoom/
 
 ## TECH STACK
 - **Backend**: Node.js, Express, MongoDB, Mongoose, dotenv, passport (for future auth)
-- **Dashboard**: React, React Router, Axios, Material UI, Chart.js
+- **Dashboard**: React, React Router, Axios, Bootstrap, Chart.js
 - **Frontend**: React, React Router, Bootstrap
 
 ---
