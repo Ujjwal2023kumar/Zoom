@@ -17,7 +17,7 @@ A full-stack clone of the Zoom platform, featuring a backend API (Node.js/Expres
 
 ## FEATURES
 - **Backend API**: RESTful endpoints for video call and chatting (Node.js, Express, MongoDB).
-- **User Dashboard**: Real-time portfolio, watchlist, order management, funds, and summary (React).
+- **User Dashboard**: Real-time communication and video call history (React).
 - **Landing Frontend**: Marketing pages, product showcase, pricing, about, and support (React).
 - **Buy/Sell Modal**: Place buy/sell orders directly from the dashboard.
 - **Watchlist**: Track favorite stocks with quick actions.
