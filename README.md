@@ -7,7 +7,6 @@ A full-stack clone of the Zoom platform, featuring a backend API (Node.js/Expres
 - [Tech Stack](#tech-stack)
 - [Setup & Installation](#setup--installation)
 - [Environment Variables](#environment-variables)
-- [Screenshots](#screenshots)
 - [Contributing](#contributing)
 - [License](#license)
 
